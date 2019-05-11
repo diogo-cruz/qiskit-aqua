@@ -645,6 +645,7 @@ class Operator(object):
                     circuits.append(circuit)
             else:
                 self._check_representation("grouped_paulis")
+                self.zeros_coeff_elimination()
 
                 for idx, tpb_set in enumerate(self._grouped_paulis):
                     circuit = QuantumCircuit() + base_circuit
